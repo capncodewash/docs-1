@@ -24,8 +24,8 @@ implement various options such as *Cache Refresh*, *Federation Hosting*,
   the Gluu Server, this feature can be enabled here.
 
 * _Self-Service Password Reset:_ The Self-Service Password Reset is
-  disabled by default. For Self-Service Password Reset to work an SMTP
-  server (see below) should be configured as well. Password reset link 
+  disabled by default. For Self-Service Password Reset to work, an SMTP
+  server (see below) must be configured as well. The password reset link 
   for your Gluu server should be something like:
   "https://your.idp.link/identity/person/passwordReminder.htm".
 
@@ -33,13 +33,13 @@ implement various options such as *Cache Refresh*, *Federation Hosting*,
   or provisioning system in place, the SCIM protocol can be used to push
   and synchronize the existing identity data into the Gluu Server.
 
-* _DNS Server:_ The address of the DNS Server goes here.
+* _DNS Server(s):_ The address of the DNS Server goes here.
 
 * _Maximum Log Size:_ This option can be used to mitigate the space
   issues within the Gluu Server. The Gluu Server automatically zips any
   log file which is bigger than the defined value in this field.
 
-* _User Can Edit Own Profiel:_ This option allows the user to edit his own profile which is located under `Personal`.
+* _User Can Edit Own Profile:_ This option allows the user to edit his own profile which is located under `Personal`.
 
 ## SMTP Server Configuration
 The Gluu server can communicate to any SMTP server specified in these
@@ -56,8 +56,7 @@ using this feature.
 * _From Email Address:_ Email Address of the Gluu Server administrator.
 
 * _Required Authentication:_ If the SMTP server requires authentication
-  for every access, then enable this option by ticking the check-box,
-  please.
+  for every access, then enable this option by ticking the check-box.
 
 * _SMTP User Name:_ The username for the SMTP server goes here.
 
@@ -67,13 +66,12 @@ using this feature.
 * _Requires SSL:_ If the SMTP Server offers communication via SSL enable
   this option by ticking the check-box.
 
-* _SMTP Port:_ The number of the SMTP host server port has to be entered
-  here.
+* _SMTP Port:_ Enter the number of the SMTP host server port here.
 
 ## oxTrust Settings
 This feature provides options to add various changes in the Gluu Server
 User Interface. The Gluu Server administrator can add Title, Display
-Name or even modify the Web User Interface color and logo from this
+Name or even modify the color and logo of the web user interface from this
 section.
 
 ![Configuration Panel](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_config_config.png)
@@ -83,16 +81,16 @@ section.
   operate the Gluu Server. There is no limit to the number of users that
   can be added to the manager group.
 
-* _Organization Logo:_ The organization logo can be uploaded and
+* _Organization Logo:_ The logo of the organization can be uploaded and
   activated from the configuration menu.
 
 * _Organization Favicon:_ This feature can be used to change the
-  organization favicon, if desired.
+  organization favicon.
 
 # Manage Authentication
 This section allows the Gluu Server administrator to define how and
 where the server should connect to authenticate users. If it is a remote
-LDAP/Active Directory server, the values are required. Put the details
+LDAP/Active Directory server, then these values are required. Enter the details
 of the data source that you are trying to connect with Gluu Server. For
 example, the data source can be your back-end Active Directory, or your
 local LDAP server.
@@ -134,14 +132,14 @@ local LDAP server.
   authenticate the *Authentication Server*.
 
 * _Test LDAP Connection:_ This button checks whether the provided
-  information are sufficient to connect to the authentication server. The
+  information is sufficient to connect to the authentication server. The
   scan is done in real time, and it is recommended to be used by the Gluu
-  Server administrators, only.
+  Server administrators only.
 
 ## Default Authentication Method
 
 This allows the Gluu Server administrator to select both the default
-authentication mode, and level for person authentication. Both modes are
+authentication mode, and the level for personal authentication. Both modes are
 set to "Default" until additional authentication mechanisms are enabled
 via [custom scripts](#manage-custom-scripts).
 
@@ -149,8 +147,8 @@ Gluu Server uses oxAuth as the first step of authentication in all kind of SSO p
 
 |Authentication Method|Description|
 |---|---|
-|Authentication mode|This mode is used in case of users authenticating with Gluu Server only without entring into oxTrust|
-|oxTrust authentication mode|This mode is used for authenticate the GUI admins or users with oxTrust GUI access|
+|Authentication mode|This mode is used in case of users authenticating with Gluu Server only without entering into oxTrust.|
+|oxTrust authentication mode|This mode is used for authenticate the GUI admins or users with oxTrust GUI access.|
 
 ![Default Authentication Method](https://raw.githubusercontent.com/GluuFederation/docs/2.4/sources/img/2.4/admin_auth_default.png)
 
@@ -170,16 +168,16 @@ Please see the [Behaviour Customization page](../customize/script.md) for detail
 ![Image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_config_workflow.png)
 
 From the Manage Registration interface, the Gluu Server administrator
-can customize the self-registration work-flow. Each option will be
-covered individually as described below.
+can customize the self-registration workflow. Each option is
+described individually below.
 
 ## Disable Captcha for registration form
-Upon activating this feature, the default Captcha will be removed from
+Upon activating this feature, the default Captcha is removed from
 the registration form.
 
 ## Configure Registration Form Attributes
 By default, there are a limited number of fields present in the
-self-registration form. If more attributes are needed they can be added
+self-registration form. If more attributes are needed, they can be added
 in this section of Registration Management. Once you activate this
 feature, just start typing the attribute name in the Attributes Filter
 and then add desired attributes to the right column. Finally, click
@@ -198,8 +196,8 @@ link.
 
 ![Show Active Attribute](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_attribute_show.png)
 
-The Gluu Server administrator can make changes, such as changing the
-status to active/inactive, to an attribute after clicking on it.
+The Gluu Server administrator can make changes to an attribute, such as changing its
+status to active/inactive, after clicking on it.
 
 ![Attributes](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_attribute_attribute.png)
 
@@ -236,7 +234,7 @@ appear:
 * _Multivalued:_ Please select multivalue in this field if the attribute
   contains more than one value.
 
-* _SCIM Attributes:_ If the attribute is a part of SCIM architecture select true.
+* _SCIM Attributes:_ If the attribute is a part of SCIM architecture, then select true.
 
 * _Description:_ This contains a few words to describe the attribute.
 
@@ -249,9 +247,9 @@ appear:
 backend customer Active Directory/LDAP Server. Cache refresh dynamically
 synchronizes user information from the backend data source of the
 customer to the Gluu Server in order to maximize performance. This
-feature is sensitive in nature and any incorrect action may result in
+feature is sensitive in nature, and any incorrect action may result in
 loss of data within the Gluu Server. Before configuring Cache Refresh,
-you should read the Cache Refresh overview (see Articles). For any
+read the Cache Refresh overview (see Articles). For any
 questions relating to Cache Refresh functionality, you can ask for
 assistance from [Gluu Support](http://support.gluu.org). *For a
 successful Cache Refresh setup, you have to insert data in ALL FIELDS
@@ -263,7 +261,7 @@ below.*
   completion is shown here.
 
 * _Updates at the Last Run:_ This shows the total number of users who
-  have been updated in the last Cache Refresh cycle. For example an user
+  have been updated in the last Cache Refresh cycle. For example, a user
   who has any of his attribute updated will show up here.
 
 * _Problem at the Last Run:_ This shows the number of users who have
@@ -302,7 +300,7 @@ Directory/LDAP server of the organization.
   to your organization.
 
 * _Bind DN:_ This contains the username to connect to the backend
-  server. You need to use full DN here. As for example,
+  server. You need to use full DN here. For example,
   _cn=gluu,dc=company,dc=org_.
 
 * _Use SSL:_ Use this feature if the backend server allows SSL
@@ -337,9 +335,9 @@ Please remember that a *failover server* is not a new server.
 
 This section of the application allows the server administrator to
 connect to the internal LDAP of the Gluu Server. As Gluu Server
-administrator, you do not need to insert anything here in this section
-as new Gluu Server versions automatically populates this for you (unless
-you try to manually configure it anyway).
+administrator, you do not need to insert anything here in this section.
+New Gluu Server versions automatically populate this for you (unless
+you try to manually configure it).
 
 * _Refresh Method:_ The Gluu Server allows the Server Administrator to
   apply two types of Cache Refresh mechanism--(i) VDS Method and (ii) Copy
@@ -426,8 +424,8 @@ mouse. This feature can be enabled from the configuration menu clicking
 
 ![Configure Log Viewer](https://cloud.githubusercontent.com/assets/7703245/12272408/8fc7ecc2-b98a-11e5-9297-3d3f3329ba5d.png)
 
-Gluu Server comes preloaded with four logs in this page as the screenshot portrays. The oxAuth, oxTrust, Cache Refresh and the console log is available by default.
-Clicking on **Add log template** will bring up boxes where log path can be set to view the same from the GUI. The boxes on the
+Gluu Server comes preloaded with four logs in this page as the screenshot portrays. The oxAuth, oxTrust, Cache Refresh, and console logs are available by default.
+Clicking on **Add log template** will bring up boxes where the path of a log file can be set, in order to view the it from the GUI. The boxes on the
 left contain the name/description of the log file, and the right boxes
 contain the path of the log file such as _/opt/tomcat/logs/demo.log_.
 
@@ -442,7 +440,7 @@ configuration menu using **Configuration --> View Log File**.
 The **Display last lines count** field contains the lines that will be
 displayed in the Web GUI. If the field contains the value **400**, then
 the Gluu Server will show the last 400 lines of the log in the GUI. The
-screenshot below shows an according example.
+screenshot below shows an example of this.
 
 ![Log file tail](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_view_logtail.png)
 
